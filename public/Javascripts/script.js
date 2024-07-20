@@ -71,13 +71,13 @@ socket.on("recieve-msg", function(data){
                    </div>`
     } else{
         content.innerHTML += `  <div class="flex">
-       <div>
+                      <div>
                          <p class="text-zinc-300 text-sm text-start">${name}</p>
                          <div class="msg w-[fit-content] bg-zinc-700 rounded-lg px-3 py-2 rounded-tl-[0] mt-2">
                         <h4>${message}</h4>
                         <p class="font-light text-zinc-300 text-sm text-end">${time}</p>
                         </div>
-       </div>
+                      </div>
                     </div>`
     }
     content.scrollTop = content.scrollHeight
@@ -94,10 +94,6 @@ socket.on("disconnected-user", function(data){
     });
 })
 
-messageInput.addEventListener("input" ,function(){
-    socket.emit("typing")
-})
-
 
 menuUsers.addEventListener("click", function(){
     leftPane.classList.add("show-users");
@@ -107,6 +103,10 @@ menuUsers.addEventListener("click", function(){
 menuClose.addEventListener("click", function(){
     leftPane.classList.add("hide-users");
 });
+
+messageInput.addEventListener("input" ,function(){
+    socket.emit("typing")
+})
 
 var timer;
 socket.on("typing",function(){
