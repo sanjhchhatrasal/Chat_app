@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<style>
+    .content::-webkit-scrollbar{
+        display:none
+    }
+</style>
+</head>
+<body>
+    <div class="main h-screen w-full bg-zinc-900 flex items-center justify-center">
+        <div class="namePage fixed h-screen w-full bg-zinc-900 flex items-center justify-center text-white">
+            <div class="w-[90%] lg:w-[35%] flex items-center justify-between rounded-lg bg-zinc-200/10 p-3">
+                <textarea class="name-input resize-none bg-transparent px-4 py-2 overflow-y-hidden w-full outline-none text-lg" rows="1" placeholder="Set your name..."></textarea>
+                <div class="setname px-3 py-2 rounded-sm cursor-pointer bg-gradient-to-r from-green-700 to-green-500">
+                    <h4 class="whitespace-nowrap">Set Your Name</h4>
+                </div>
+            </div>
+        </div>
+        <div class="main-app h-screen w-full lg:w-[55%] lg:h-[85%] bg-zinc-500/10 flex items-center gap-1 justify-between p-2 rounded-lg text-white">
+            <div class="left bg-zinc-300/10  h-full lg:w-[40%] w-[35%] overflow-hidden">
+                <div class="all-users h-[10%] w-full bg-gradient-to-r from-emerald-300 to-emerald-700 flex items-center p-2">
+                    <h1 class="text-xl font-semibold">Active Users</h1>
+                </div>
+                <div class="users h-[90%] w-full flex flex-col items-center gap-3 mt-4">
+                   
+                    
+                </div>
+            </div>
+            <div class="right h-full lg:w-[60%] w-[65%] overflow-hidden">
+                <div class="profile h-[10%] w-full bg-zinc-300/10 flex items-center justify-between p-2">
+                    <div class="flex items-center gap-3">
+                        <h1 class="username text-2xl font-semibold">Sanjh</h1>
+                        <h6 class="text-green-500 text-sm mt-2"><span class="live">2</span><i class="ri-circle-fill ml-1"></i></h6>
+                    </div>
+                    <div class="typing text-emerald-400"></div>
+                    <div class="flex gap-2 items-center">
+                        <a class="px-2 py-1 rounded-lg bg-gradient-to-r from-green-500 to-green-700" href="/">Reset name</a>
+                    </div>
+                </div>
+                <div class="content h-[80%] w-full p-3 text-white overflow-y-auto overflow-hidden flex flex-col">
+                </div>
+                <div class="input-container flex items-center justify-between h-[10%] bg-zinc-300/10 p-2">
+                    <textarea class="message-input resize-none bg-transparent px-4 py-2 overflow-y-hidden w-full outline-none text-lg" rows="1" placeholder="Write your message..."></textarea>
+                    <div class="send-btn px-4 py-2 rounded-sm bg-gradient-to-r from-emerald-500 to-emerald-700 cursor-pointer">
+                        <div><i class="ri-send-plane-2-fill"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="/Javascripts/script.js"></script>
+</body>
+</html>
