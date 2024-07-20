@@ -71,5 +71,12 @@ socket.on("recieve-msg", function(data){
 })
 
 socket.on("disconnected-user", function(data){
-    live.textContent = data
+    live.textContent = data.totalusers
+    allUsers.innerHTML = ""; 
+    data.usernames.forEach(username => {
+        allUsers.innerHTML += `
+            <div class="user w-[90%] h-[8%] bg-gradient-to-r from-emerald-500 to-emerald-700 p-2">
+                <h2 class="user-name">${username}</h2>
+            </div>`;
+    });
 })

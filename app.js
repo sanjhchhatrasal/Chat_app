@@ -32,7 +32,7 @@ io.on("connection", function(socket){
     socket.on("disconnect", function(){
         if(userid.indexOf(socket.id) !== -1){
             userid.splice(userid.indexOf(socket.id),1)
-            username.splice(userid.indexOf(socket.id),1);
+            username.splice(username.indexOf(socket.id),1);
             io.emit("disconnected-user", {totalusers : username.length, usernames: username})
         }
     })
