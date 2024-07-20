@@ -97,11 +97,13 @@ socket.on("disconnected-user", function(data){
 
 menuUsers.addEventListener("click", function(){
     leftPane.classList.add("show-users");
+    leftPane.classList.remove("hide-users");
 });
 
 
 menuClose.addEventListener("click", function(){
     leftPane.classList.add("hide-users");
+    leftPane.classList.remove("show-users");
 });
 
 messageInput.addEventListener("input" ,function(){
