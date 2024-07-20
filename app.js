@@ -26,7 +26,19 @@ io.on("connection", function(socket){
     })
 
     socket.on("send-msg", function(data){
-        io.emit("recieve-msg", {id: socket.id, ...data})
+        if(userid.indexOf(socket.id) !== -1){
+            let name = username[userid.indexOf(socket.id)]
+            io.emit("recieve-msg", {id: socket.id, ...data, name})
+        }
+        
+    })
+
+    socket.on("typing", function(){
+        if(userid.indexOf(socket.id) !== -1){
+            let name = username[userid.indexOf(socket.id)]
+            socket.broadcast.emit("typing")
+            console.log(`typing...${name}`)
+        }
     })
 
     socket.on("disconnect", function(){

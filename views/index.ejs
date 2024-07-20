@@ -13,6 +13,13 @@
     .content::-webkit-scrollbar{
         display:none
     }
+    .show-users {
+    width: 900% !important; /* Adjust the width as per your requirement */
+}
+.hide-users {
+    width: 0% !important; /* Adjust the width as per your requirement */
+}
+
 </style>
 </head>
 <body>
@@ -23,30 +30,41 @@
                 <div class="setname px-3 py-2 rounded-sm cursor-pointer bg-gradient-to-r from-green-700 to-green-500">
                     <h4 class="whitespace-nowrap">Set Your Name</h4>
                 </div>
+               
             </div>
         </div>
         <div class="main-app h-screen w-full lg:w-[55%] lg:h-[85%] bg-zinc-500/10 flex items-center gap-1 justify-between p-2 rounded-lg text-white">
-            <div class="left bg-zinc-300/10  h-full lg:w-[40%] w-[35%] overflow-hidden">
-                <div class="all-users h-[10%] w-full bg-gradient-to-r from-emerald-300 to-emerald-700 flex items-center p-2">
+            <div class="left bg-zinc-300/10  h-full lg:w-[40%] w-[0%] overflow-hidden">
+                <div class="all-users h-[10%] w-full bg-gradient-to-r from-emerald-300 to-emerald-700 flex items-center justify-between p-2">
                     <h1 class="text-xl font-semibold">Active Users</h1>
+                    <div class="flex items-center menu-close cursor-pointer text-2xl">
+                        <i class="ri-close-line"></i>
+                    </div>
                 </div>
                 <div class="users h-[90%] w-full flex flex-col items-center gap-3 mt-4">
                    
                     
                 </div>
             </div>
-            <div class="right h-full lg:w-[60%] w-[65%] overflow-hidden">
+            <div class="right h-full lg:w-[60%] w-[100%] overflow-hidden">
                 <div class="profile h-[10%] w-full bg-zinc-300/10 flex items-center justify-between p-2">
                     <div class="flex items-center gap-3">
-                        <h1 class="username text-2xl font-semibold">Sanjh</h1>
+                        <div>
+                            <h1 class="username text-2xl font-semibold">Sanjh</h1>
+                        <div class="typing text-emerald-400"></div>
+                        </div>
                         <h6 class="text-green-500 text-sm mt-2"><span class="live">2</span><i class="ri-circle-fill ml-1"></i></h6>
                     </div>
-                    <div class="typing text-emerald-400"></div>
+                    
                     <div class="flex gap-2 items-center">
                         <a class="px-2 py-1 rounded-lg bg-gradient-to-r from-green-500 to-green-700" href="/">Reset name</a>
+                        <div class="flex items-center menu-users cursor-pointer text-2xl">
+                            <i class="ri-menu-line"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="content h-[80%] w-full p-3 text-white overflow-y-auto overflow-hidden flex flex-col">
+                   
                 </div>
                 <div class="input-container flex items-center justify-between h-[10%] bg-zinc-300/10 p-2">
                     <textarea class="message-input resize-none bg-transparent px-4 py-2 overflow-y-hidden w-full outline-none text-lg" rows="1" placeholder="Write your message..."></textarea>
