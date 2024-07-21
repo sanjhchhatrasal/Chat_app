@@ -22,7 +22,7 @@ io.on("connection", function(socket){
         userid.push(socket.id)
         socket.emit("username-set", name);
         io.emit("connected-users", {totalusers : username.length, usernames: username})
-        console.log(username.length)
+        console.log(username.length, username, userid)
     })
 
     socket.on("send-msg", function(data){
@@ -42,12 +42,14 @@ io.on("connection", function(socket){
     })
 
     socket.on("disconnect", function(){
-        if(userid.indexOf(socket.id) !== -1){
-            userid.splice(userid.indexOf(socket.id),1)
-            username.splice(username.indexOf(socket.id),1);
-            io.emit("disconnected-user", {totalusers : username.length, usernames: username})
+        const index = userid.indexOf(socket.id);
+        if(index !== -1){
+            const removedUsername = username.splice(index, 1)[0];
+            userid.splice(index, 1);
+            io.emit("disconnected-user", { totalusers: username.length, usernames: username });
+            console.log(userid, username, "disconnected", removedUsername);
         }
-    })
+    });
 })
 
 app.get("/", (req, res) => {
